@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestion des Tâches</title>
+    <link rel="icon" href="logo.ico" />
+    <link href="style.css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Gestion des Tâches</h1>
+
+    <form id="addForm">
+        <label>Nom :</label>
+        <input type="text" name="name" id="name" required>
+
+        <label>Description :</label>
+        <textarea name="description" id="description" required></textarea>
+
+        <label>Échéance :</label>
+        <input type="date" name="deadline" id="deadline" required>
+
+        <label for="status">Statut :</label>
+        <select name="status" id="status" required>
+            <option value="Terminé">Terminé</option>
+            <option value="À faire">À faire</option>
+        </select>
+
+        <button type="submit">Enregistrer</button>
+    </form>
+
+    <div class="tasks">
+        <h2>Liste des tâches</h2>
+        <div id="noTasks" class="muted">Aucune tâche enregistrée.</div>
+        <table id="tasksTable" style="display:none">
+            <thead>
+                <tr>
+                    <th><a href="index.html" class="reset-filters">ID</a></th>
+                    <th>Nom
+                        <div class="dropdown">
+                            <span class="arrow">▼</span>
+                            <div class="dropdown-content" id="filterNames"></div>
+                        </div>
+                    </th>
+                    <th>Description</th>
+                    <th>Échéance
+                        <div class="dropdown">
+                            <span class="arrow">▼</span>
+                            <div class="dropdown-content" id="filterDeadlines"></div>
+                        </div>
+                    </th>
+                    <th>Statut
+                        <div class="dropdown">
+                            <span class="arrow">▼</span>
+                            <div class="dropdown-content" id="filterStatuses"></div>
+                        </div>
+                    </th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="tasksBody"></tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

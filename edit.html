@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Modifier une tâche</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Modifier la tâche</h1>
+
+    <form id="editForm">
+        <label>Nom :</label>
+        <input type="text" name="name" id="editName" required>
+
+        <label>Description :</label>
+        <textarea name="description" id="editDescription" required></textarea>
+
+        <label>Échéance :</label>
+        <input type="date" name="deadline" id="editDeadline" required>
+
+        <label for="status">Statut :</label>
+        <select name="status" id="editStatus" required>
+            <option value="Terminé">Terminé</option>
+            <option value="À faire">À faire</option>
+        </select>
+
+        <button type="submit">Mettre à jour</button>
+        <button type="button" id="cancelBtn">Annuler</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
